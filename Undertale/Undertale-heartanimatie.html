@@ -60,26 +60,56 @@
     100% { transform: rotate(-45deg) scaleY(1) scaleX(1); }
 }
 
-.navbar {
-    padding: 15px; /* Space around the content */
-    color: white; /* Text color */
-    display: flex;
-    justify-content: center; /* Center content */
-    position: fixed; /* Keep at the top */
-    top: 0; /* Align to the top */
-    width: 100%; /* Full width */
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    font-size: 82px; /* Adjust as necessary */
-    font-weight: bold; /* For emphasis */
-    color: white; /* Adjust color as needed */
+/* Navbar styles */
+.navbar {
+    background-color: black; /* Set the background to black */
+    position: fixed; /* Keep it at the top */
+    top: 0; /* Align it at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
 }
+
+.navbar ul {
+    list-style-type: none; /* Remove bullets */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Space between items */
+    padding: 10px 0; /* Vertical padding */
+}
+
+.navbar li {
+    display: inline; /* Inline items */
+}
+
+.navbar a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for links */
+}
+
+.navbar a:hover {
+    color: lightgray; /* Change background on hover */
+}
+
+/* Content styles */
+.content {
+    margin-top: 60px; /* Provide space for the fixed navbar */
+    padding: 20px; /* Padding for content */
+}
+
+
+
     </style>
 </head>
 <body>
     <div class="navbar">
         <h1>UNDERTALE</h1>
+        <a href="./Over-Undertale.html">Over-Undertale</a>
     </div>
     <div class="heart-container">
         <div class="heart"></div>

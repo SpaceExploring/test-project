@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+html, body {
+    height: 100%;  /* Ensure body takes full height */
+    margin: 0;     /* Remove default margin */
+}
+
+.heart-container {
+    position: absolute;  /* Change to absolute for proper centering */
+    top: 50%;           /* Center vertically */
+    left: 50%;          /* Center horizontally */
+    transform: translate(-50%, -50%); /* Move back by 50% of its width and height */
+    width: 50px;        /* Width of small heart */
+    height: 50px;       /* Height of small heart */
+}
+
+.heart::before {
+    top: -25px; 
+    left: 0;
+}
+
+.heart::after {
+    left: 25px; 
+    top: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;   
+    height: 50px;  
+    background-color: red;
+    animation: colorChange 7s infinite; /* Add colorChange animation */
+    border-radius: 50%;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;   
+    height: 50px;  
+    background-color: red;
+    animation: flicker 1s infinite, colorChange 7s infinite; /* Add colorChange animation */
+    transform: rotate(-45deg) scaleY(1) scaleX(1);
+    box-shadow: 0 0 25px red, 0 0 25px red;
+}
+
+@keyframes flicker {
+    0% { transform: rotate(-45deg) scaleY(1) scaleX(1); }
+    25% { transform: rotate(-45deg) scaleY(1.2) scaleX(1.2); }
+    50% { transform: rotate(-45deg) scaleX(1.2) scaleY(1.2); }
+    100% { transform: rotate(-45deg) scaleY(1) scaleX(1); }
+}
+
+@keyframes colorChange {
+    0% { background-color: red; box-shadow: 0 0 25px red, 0 0 25px red;}
+    14% { background-color: orange; box-shadow: 0 0 25px orange, 0 0 25px orange;}
+    29% { background-color: yellow; box-shadow: 0 0 25px yellow, 0 0 25px yellow;}
+    43% { background-color: green; box-shadow:  0 0 25px green, 0 0 25px green;}
+    57% { background-color: blue; box-shadow: 0 0 25px blue, 0 0 25px blue;}
+    71% { background-color: rgb(0, 231, 247); box-shadow: 0 0 25px rgb(0, 231, 247), 0 0 25px rgb(0, 231, 247);}
+    86% { background-color: purple; box-shadow:  0 0 25px purple, 0 0 25px purple;}
+    100% { background-color: red; box-shadow: 0 0 25px red, 0 0 25px red;} /* Loop back to the start */
+}
+
+/* Navigation styles remain the same */
+.navbar {
+    background-color: black; /* Set the background to black */
+    position: fixed; /* Keep it at the top */
+    top: 0; /* Align it at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullets */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Space between items */
+    padding: 10px 0; /* Vertical padding */
+}
+
+.navbar li {
+    display: inline; /* Inline items */
+}
+
+.navbar a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for links */
+}
+.navbar h1 {
+    color: white;
+}
+.navbar a:hover {
+    color: lightgray; /* Change background on hover */
+}
+.content {
+    margin-top: 60px; /* Provide space for the fixed navbar */
+    padding: 20px; /* Padding for content */
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <h1>
+        UNDERTALE
+    </h1>
+    <a href="./Undertale-heartanimatie.html">Determination</a>
+    <a href="./Undertale-2heartanimatie.html">Bravery</a>
+    <a href="./Undertale-3hearanimatie.html">Justice</a>
+    <a href="./Undertale-4heartanimatie.html">Kindness</a>
+    <a href="./Undertale-5heartanimatie.html">Integrity</a>
+    <a href="./Undertale-6heartanimatie.html">Patience</a>
+    <a href="./Undertale-7hearanimatie.html">Perseverance</a>
+    </div>
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+</body>
+</html>
