@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Light background for contrast */
+}
+
+.heart-container {
+    position: relative;
+    width: 100px;   /* Width of heart */
+    height: 100px;  /* Height of heart */
+}
+
+.heart {
+    position: absolute;
+    width: 100px;   /* Width of heart */
+    height: 100px;  /* Height of heart */
+    background-color: red; /* Heart color */
+    animation: flicker 1s infinite; /* Apply flicker animation */
+    transform: rotate(-45deg) scaleY(1) scaleX(1); /* Combine transformations */
+    box-shadow: 0 0 50px red, 0 0 50px red; /* Add red shadow */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;   /* Width of heart lobes */
+    height: 100px;  /* Height of heart lobes */
+    background-color: red; /* Color for lobes */
+    border-radius: 50%; /* Round the lobes */
+}
+
+.heart::before {
+    top: -50px; /* Position the top lobe */
+    left: 0;
+}
+
+.heart::after {
+    left: 50px; /* Position the right lobe */
+    top: 0;
+}
+
+@keyframes flicker {
+    0% { transform: rotate(-45deg) scaleY(1) scaleX(1); }
+    25% { transform: rotate(-45deg) scaleY(1.2) scaleX(1.2); }
+    50% { transform: rotate(-45deg) scaleX(1.2) scaleY(1.2);  }
+    100% { transform: rotate(-45deg) scaleY(1) scaleX(1); }
+}
+
+.navbar {
+    padding: 15px; /* Space around the content */
+    color: white; /* Text color */
+    display: flex;
+    justify-content: center; /* Center content */
+    position: fixed; /* Keep at the top */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+}
+
+h1 {
+    font-size: 82px; /* Adjust as necessary */
+    font-weight: bold; /* For emphasis */
+    color: white; /* Adjust color as needed */
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>UNDERTALE</h1>
+    </div>
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+    
+</body>
+</html>
